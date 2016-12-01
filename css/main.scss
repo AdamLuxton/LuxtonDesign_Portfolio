@@ -1,0 +1,487 @@
+$lato: 'Lato';
+$latoMedium: 'Lato Medium';
+$latoBold: 'Lato Bold';
+$red: #F05D5E;
+$grey: #2A2B2E;
+$turquoise: #0F7173;
+$greenblue: #2fedb1;
+$bluegreen: #0ABAB5;
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    src: url(../fonts/lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Lato Medium';
+    src: url(../fonts/lato/Lato-Medium.ttf);
+}
+
+.show-for-small-only{
+  display: block;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+header{
+  width: 100%;
+  height: 0;
+  background-color: #1c1c1c;
+  background-size: cover;
+  background-position: center top;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+
+    a{
+      color:#FFF;
+      font-family: $latoBold;
+      font-size: 1.3em;
+      transition: color 1s;
+
+
+        &:link,&:visited{
+          color: #FFF;
+          text-decoration: none;
+        }
+
+        &:hover{
+          color: $greenblue;
+          text-decoration: none;
+        }
+
+        &:active{
+          color: #FFF;
+          text-decoration: none;
+        }
+
+    }
+}
+
+.navA{
+  padding: 28px 0 0 0;
+  text-align: center;
+  transform: scale(0,0);
+  transform-origin: center center;
+}
+
+#headerContent{
+  opacity: 1;
+}
+
+#hamburgerIcon{
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#navBackground{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0;
+  display: none;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#landingPage{
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+  background-image: url(../images/landingbackground.jpg);
+  position: relative;
+  //background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  align-content: center;
+}
+
+#landingContent{
+
+  /*background-image: url(../images/luxtonlogobackground_mobile.png);*/
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+#button1{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+#landingText{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  width: 100%;
+  z-index: 2;
+
+  h1{
+    letter-spacing: 10px;
+    font-size: 1.700em;
+    margin: 0;
+    font-family: $latoBold;
+    padding: 0;
+    color: $bluegreen;
+  }
+
+  p{
+    margin: 0;
+    font-size: 1em;
+    letter-spacing: 10px;
+    font-family: $latoMedium;
+  }
+
+  h2{
+    margin: 5px 0 0 0;
+    font-size: 1em;
+    letter-spacing: 10px;
+    font-family: $latoMedium;
+    line-height: 170%;
+  }
+
+
+}
+
+.button{
+  padding: 10px;
+  font-family: $latoBold;
+  border: 2px solid #FFF;
+  background: none;
+  transition: color 1s, border-color 1s, background 1s;
+  border-radius: 5px;
+  color: #0abab5; /* Old browsers */
+  color: #FFF;
+
+  &:hover{
+    color: #FFF;
+    background: $bluegreen;
+    border-color: $bluegreen;/* Old browsers */
+  }
+}
+
+#logoIcon{
+  position: absolute;
+  top: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  z-index: 2;
+}
+
+.comIcons{
+  height: 300px;
+}
+
+#aboutSection{
+  overflow: hidden;
+}
+
+#aboutHeader{
+  height: 200px;
+  background-color: $turquoise;
+  position: relative;
+  transform: scale(1,0);
+  z-index: 2;
+  transform-origin: center top;
+}
+
+#aboutHeaderContent{
+  position:absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  h1{
+    font-family: $latoBold;
+    color: #FFF;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
+}
+
+#aboutText{
+  padding: 10px;
+  position: relative;
+}
+
+#aboutContent{
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  h1{
+    margin: 0;
+    color: $bluegreen;
+    font-family: $latoBold;
+    letter-spacing: 5px;
+  }
+  p{
+    color: $grey;
+    font-family: $latoMedium;
+  }
+}
+
+#aboutImage{
+  background: #333;
+}
+
+#skillSection{
+}
+
+#skillTitleDiv{
+  background: $turquoise;
+  height: 500px;
+  position: relative;
+}
+
+#skillTitle{
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  h1{
+    color: #FFF;
+    font-family: $latoBold;
+  }
+}
+
+#buttonSection{
+  background-color: $bluegreen;
+  opacity: 1;
+}
+
+.comIcons{
+  height: 250px;
+}
+
+.buttonContainer{
+  margin: 60px 0 70px 0;
+  color: #FFF;
+  opacity: 0;
+  h2{
+    font-family: $latoBold;
+  }
+  p{
+    padding: 0 40px 0 40px;
+    font-family: $latoMedium;
+  }
+}
+
+#portfolioControl{
+  background-color: #FFF;
+  height: 100px;
+}
+
+.square{
+  //height: 400px;
+  opacity: 0;
+}
+
+.color{
+  //background-image: url(../images/landingbackground.jpg);
+  background-color: $turquoise;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  .portfolioContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    opacity: 0;
+    transition: top 1s;
+
+
+    h2{
+      font-family: $latoBold;
+      margin: 0;
+    }
+    p{
+      font-family: $latoMedium;
+      margin-bottom: 40px;
+    }
+
+    a{
+      @extend .button;
+      color:#FFF;
+      font-family: $latoBold;
+      font-size: 1.3em;
+      border-color: #FFF;
+      transition: color 1s, border-color 1s, background 1s;
+      position: static;
+
+      &:link, &:visited{
+        color: #FFF;
+        text-decoration: none;
+      }
+      &:hover{
+        @extend .button:hover;
+        text-decoration: none;
+        border-color: $bluegreen;
+        background-color: $bluegreen;
+        color: #FFF;
+      }
+
+      &:active{
+        color: #FFF;
+        text-decoration: none;
+      }
+    }
+  }
+  &:hover .portfolioContent{
+    top: 50%;
+  }
+}
+
+/* Medium and up */
+@media screen and (min-width: 48em) {
+
+  .show-for-small-only{
+    display: none;
+  }
+
+  header a{
+    font-size: 1.5em;
+  }
+
+  .navA{
+    padding: 24px 0 0 0;
+  }
+
+  #landingText{
+    position: absolute;
+    top: 46%;
+
+    h1{
+      letter-spacing: 15px;
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    p{
+      margin: 0;
+      font-size: 1.2em;
+      letter-spacing: 10px;
+    }
+
+    h2{
+      margin: 10px 0 0 0;
+      font-size: 1.2em;
+      letter-spacing: 10px;
+    }
+  }
+
+  #button1{
+    top: 73%;
+  }
+
+}
+
+/* Medium only */
+@media screen and (min-width: 48em) and (max-width: 62em) {}
+
+/* Large and up */
+@media screen and (min-width: 62em) {
+
+  .hide-for-small{
+    display: block;
+  }
+
+  #landingContent{
+    /*background-image: url(../images/luxtonlogobackground.png);*/
+    }
+
+  #landingText{
+    top: 43%;
+
+    h1{
+      letter-spacing: 15px;
+      font-size: 3.750em;
+      margin: 0;
+    }
+
+    p{
+      margin: 0;
+      font-size: 1.875em;
+      letter-spacing: 10px;
+    }
+
+    h2{
+      margin: 12px 0 0 0;
+      font-size: 1.875em;
+      letter-spacing: 10px;
+    }
+  }
+
+  #logoIcon{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    transform: translateX(0);
+  }
+
+  #aboutHeader{
+    height: 600px;
+    background-color: $turquoise;
+    position: relative;
+    transform: scale(0,1);
+    z-index: 2;
+    transform-origin: left center;
+  }
+
+  #aboutText{
+    padding: 40px;
+    position: relative;
+    height: 300px;
+  }
+
+  .color{
+    .portfolioContent{ top:-50%;}
+  }
+}
+
+/* Large only */
+@media screen and (min-width: 62em) and (max-width: 75em) {}
+
+/* X-Large and up */
+@media screen and (min-width: 75em) {}
