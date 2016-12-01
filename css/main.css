@@ -3,7 +3,9 @@
 @font-face { font-family: 'Lato Medium'; src: url(../fonts/lato/Lato-Medium.ttf); }
 .show-for-small-only { display: block; }
 
-body, html { margin: 0; padding: 0; background-color: #FFF; text-align: center; height: 100%; width: 100%; }
+html, body { margin: 0; padding: 0; text-align: center; height: 100%; width: 100%; }
+
+body { background-color: #2A2B2E; background-image: url(../images/landingbackground.jpg); background-position: center; background-size: cover; }
 
 header { width: 100%; height: 0; background-color: #1c1c1c; background-size: cover; background-position: center top; position: fixed; top: 0; z-index: 3; }
 header a { color: #FFF; font-family: "Lato Bold"; font-size: 1.3em; transition: color 1s; }
@@ -21,9 +23,9 @@ header a:active { color: #FFF; text-decoration: none; }
 #navBackground { position: fixed; height: 100%; width: 100%; z-index: 2; top: 0; left: 0; background-color: #000; opacity: 0; display: none; }
 #navBackground:hover { cursor: pointer; }
 
-#landingPage { height: 100%; width: 100%; background-color: #333; background-image: url(../images/landingbackground.jpg); position: relative; background-position: center; background-size: cover; z-index: 1; display: flex; align-content: center; }
+#landingPage { height: 100%; width: 100%; background: none; position: relative; z-index: 1; display: flex; align-content: center; }
 
-#landingContent { /*background-image: url(../images/luxtonlogobackground_mobile.png);*/ background-size: cover; background-position: center; height: 100%; width: 100%; }
+#landingContent { /*background-image: url(../images/luxtonlogobackground_mobile.png);*/ height: 100%; width: 100%; }
 
 #button1 { position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); }
 
@@ -39,7 +41,7 @@ header a:active { color: #FFF; text-decoration: none; }
 
 .comIcons { height: 300px; }
 
-#aboutSection { overflow: hidden; }
+#aboutSection { overflow: hidden; background: #FFF; }
 
 #aboutHeader { height: 200px; background-color: #0F7173; position: relative; transform: scale(1, 0); z-index: 2; transform-origin: center top; }
 
@@ -52,8 +54,6 @@ header a:active { color: #FFF; text-decoration: none; }
 #aboutContent { position: absolute; top: 48%; left: 50%; transform: translate(-50%, -50%); opacity: 0; }
 #aboutContent h1 { margin: 0; color: #0ABAB5; font-family: "Lato Bold"; letter-spacing: 5px; }
 #aboutContent p { color: #2A2B2E; font-family: "Lato Medium"; }
-
-#aboutImage { background: #333; }
 
 #skillTitleDiv { background: #0F7173; height: 500px; position: relative; }
 
@@ -93,7 +93,8 @@ header a:active { color: #FFF; text-decoration: none; }
   #button1 { top: 73%; } }
 /* Medium only */
 /* Large and up */
-@media screen and (min-width: 62em) { .hide-for-small { display: block; }
+@media screen and (min-width: 62em) { body { background-image: url(../images/landingbackground.jpg); background-attachment: fixed; }
+  .hide-for-small { display: block; }
   #landingContent { /*background-image: url(../images/luxtonlogobackground.png);*/ }
   #landingText { top: 43%; }
   #landingText h1 { letter-spacing: 15px; font-size: 3.750em; margin: 0; }
