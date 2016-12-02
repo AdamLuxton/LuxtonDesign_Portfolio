@@ -124,7 +124,7 @@ function adjustSquare(){
 }
 else{
   document.querySelector('#aboutText').style.height = "300px";
-  document.querySelector('#aboutImage').style.height = "300px";
+  document.querySelector('#aboutImage').style.height = "400px";
   //document.querySelector('#skillContentDiv').style.height = "500px";
 }
 
@@ -133,17 +133,20 @@ else{
 
 function checkScroll(){
   hamburgerScroll();
-  if (window.scrollY >= ((document.querySelector("#aboutHeader").offsetTop)-200)){
+  scrollParallax();
+  if (window.scrollY >= ((document.querySelector("#aboutSection").offsetTop)-300)){
     console.log("running");
     TweenMax.to(document.querySelector("#aboutHeader"), 0.5, {transform:"scale(1,1)", delay: 0.25, ease:Power1.easeOut});
     TweenMax.to(document.querySelector("#aboutHeaderContent"), 1, {opacity:1, delay: 1, ease: Power1.easeOut});
     if (!(window.matchMedia("(min-width: 48em)").matches)) {
       if (window.scrollY >= ((document.querySelector("#aboutContent").offsetTop)-200)){
         TweenMax.to(document.querySelector("#aboutContent"), 1, {opacity:1, delay: 1, ease: Power1.easeOut});
+        TweenMax.to(document.querySelector("#aboutImage"), 1.5, {opacity:1, delay: 2, ease: Power1.easeOut});
       }
     }
     else{
       TweenMax.to(document.querySelector("#aboutContent"), 1, {opacity:1, delay: 1.5, ease: Power1.easeOut});
+      TweenMax.to(document.querySelector("#aboutImage"), 1.5, {opacity:1, delay: 2.5, ease: Power1.easeOut});
     }
   }
 
@@ -192,9 +195,7 @@ else{
 }
 
 function hamburgerScroll(){
-
   //console.log("running");
-
     if (!(window.matchMedia("(min-width: 62em)").matches)) {
       if(window.scrollY < (document.querySelector('#aboutSection').offsetTop + 175)){
         //console.log("ran");
@@ -205,7 +206,7 @@ function hamburgerScroll(){
         //console.log("changed colour");
         TweenMax.to(document.querySelectorAll('.st1'), 0.5, {stroke:"#0F7173", ease:Power1.easeOut});
         hamburgerColor = "#0F7173";
-        if(window.scrollY >= (document.querySelector('#buttonSection').offsetTop)) {
+        if(window.scrollY >= ((document.querySelector('#aboutImage').offsetTop) + about.offsetTop)) {
           //console.log("changing color");
           TweenMax.to(document.querySelectorAll('.st1'), 0.5, {stroke:"#FFF", ease:Power1.easeOut});
           hamburgerColor = "#FFF";
@@ -222,13 +223,21 @@ function hamburgerScroll(){
         //console.log("changed colour");
         TweenMax.to(document.querySelectorAll('.st1'), 0.5, {stroke:"#0F7173", ease:Power1.easeOut});
         hamburgerColor = "#0F7173";
-        if(window.scrollY >= ((document.querySelector('#buttonSection').offsetTop)-30)) {
+        if(window.scrollY >= ((document.querySelector('#aboutImage').offsetTop + about.offsetTop)-30)) {
           //console.log("changing color");
           TweenMax.to(document.querySelectorAll('.st1'), 0.5, {stroke:"#FFF", ease:Power1.easeOut});
           hamburgerColor = "#FFF";
         }
       }
     }
+}
+
+function scrollParallax(){
+  if ((window.matchMedia("(min-width: 62em)").matches)) {
+    var aboutText = document.querySelector('#aboutText');
+    var scrollY = window.scrollY-about.offsetTop;
+    document.querySelector("#aboutBackground").style.top = -scrollY/16 + "%";
+  }
 }
 
 function scrollAbout(e){

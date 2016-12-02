@@ -36,11 +36,21 @@ html{
 
 body{
   @extend html;
-  background-color: $grey;
-  background-image: url(../images/landingbackground.jpg);
-  background-position: center;
-  background-size: cover;
-}
+    position: relative;
+    background: none;
+      &::before {
+        content: ' ';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        will-change: transform;
+        background: url('../images/toronto.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: -1;
+      }
+  }
 
 header{
   width: 100%;
@@ -117,7 +127,12 @@ header{
 #landingPage{
   height: 100%;
   width: 100%;
-  background: none;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2a2b2e+100&0+0,1+100 */
+background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(42,43,46,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(42,43,46,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(42,43,46,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#2a2b2e',GradientType=0 ); /* IE6-9 */
+
   position: relative;
   //background-blend-mode: overlay;
   z-index: 1;
@@ -209,7 +224,31 @@ header{
 
 #aboutSection{
   overflow: hidden;
+  position: relative;
+  background-color: #FFF;
+}
+
+#aboutBGBlock{
   background: #FFF;
+  height:300px;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+#aboutBackground{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/landingbackground.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  will-change: transform;
 }
 
 #aboutHeader{
@@ -241,6 +280,7 @@ header{
 #aboutText{
   padding: 10px;
   position: relative;
+  background: #FFF;
 }
 
 #aboutContent{
@@ -249,6 +289,7 @@ header{
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  z-index: 2;
   h1{
     margin: 0;
     color: $bluegreen;
@@ -262,6 +303,10 @@ header{
 }
 
 #aboutImage{
+  background: none;
+  opacity: 0;
+  //background-color: $grey;
+  //background-blend-mode: overlay;
 }
 
 #skillSection{
@@ -304,6 +349,10 @@ header{
     padding: 0 40px 0 40px;
     font-family: $latoMedium;
   }
+}
+
+#portfolio{
+  background-color: #FFF;
 }
 
 #portfolioControl{
@@ -375,6 +424,28 @@ header{
   }
 }
 
+#contactSection{
+  background-color: $bluegreen;
+  color: #FFF;
+}
+
+#contactForm{
+  padding: 20px;
+  margin: 40px 0 40px 0;
+}
+
+#submitBut{
+  padding: 5px 10px 5px 10px;
+}
+.input-group, .form-group{
+  margin-bottom: 20px;
+}
+.input-group-addon{
+  background-color: $turquoise;
+  color: #FFF;
+  border-color: $turquoise;
+}
+
 /* Medium and up */
 @media screen and (min-width: 48em) {
 
@@ -414,7 +485,8 @@ header{
   }
 
   #button1{
-    top: 73%;
+    top: 62%;
+    font-size: 16px;
   }
 
 }
@@ -425,13 +497,12 @@ header{
 /* Large and up */
 @media screen and (min-width: 62em) {
 
-  body{
-    background-image: url(../images/landingbackground.jpg);
-    background-attachment: fixed;
-  }
-
   .hide-for-small{
     display: block;
+  }
+
+  #landingPage{
+
   }
 
   #landingContent{
@@ -468,7 +539,7 @@ header{
   }
 
   #aboutHeader{
-    height: 600px;
+    height: 450px;
     background-color: $turquoise;
     position: relative;
     transform: scale(0,1);
@@ -480,6 +551,15 @@ header{
     padding: 40px;
     position: relative;
     height: 300px;
+  }
+
+  #aboutSection{
+    overflow: hidden; // added for pseudo-element
+    position: relative;
+  }
+  #aboutBackground{
+    position: absolute;
+    height: 150%;
   }
 
   .color{
